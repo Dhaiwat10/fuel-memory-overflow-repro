@@ -2,7 +2,7 @@
 
 Steps to reproduce:
 
-1. Make sure you have an instance of fuel-core@0.18.x running locally.
+1. Make sure you have an instance of fuel-core@0.18.x running locally at http://127.0.0.1:4000/graphql.
 2. Clone this repo and run `npm install` in the root directory.
 3. Replace the private key for the wallet in `index.ts` with a valid one for your node.
 4. Run `npm run dev` to run the script.
