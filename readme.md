@@ -12,15 +12,16 @@ Steps to reproduce:
 > fuel-memory-overflow-repro@1.0.0 dev
 > ts-node index.ts
 
-Contract deployed at fuel1tj3r0n65taj7kt3qn0v9fpl3j9wwpg9t4kta5mr799pm2n3urz4sg62v8v
+contract deployed at fuel1f503jt3kxtlvhuwkn3egdk882t2vanrfr2500ds08rmmwpc9fx8qkf6wv7
+external-contract deployed at fuel1f9n6e654p6g99xq8dcr3m3rzum2g3776j7namhphua7783mpjvtsa7pet4
 /Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/script-request.ts:94
     throw new ScriptResultDecoderError(
           ^
 ScriptResultDecoderError: Expected returnReceipt
 
 {
-  "doc": "https://docs.rs/fuel-asm/latest/fuel_asm/enum.PanicReason.html",
-  "reason": "unknown"
+  "doc": "https://docs.rs/fuel-asm/latest/fuel_asm/enum.PanicReason.html#variant.MemoryOverflow",
+  "reason": "MemoryOverflow"
 }
 
 Receipts:
@@ -41,13 +42,12 @@ Receipts:
 ]
     at decodeCallResult (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/script-request.ts:94:11)
     at ScriptRequest.decodeCallResult (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/script-request.ts:189:12)
-    at InvocationCallResult.getDecodedValue (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/functions/invocation-results.ts:60:47)
+    at FunctionInvocationResult.getDecodedValue (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/functions/invocation-results.ts:60:47)
     at new InvocationResult (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/functions/invocation-results.ts:41:23)
-    at new InvocationCallResult (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/functions/invocation-results.ts:130:5)
-    at Function.build (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/functions/invocation-results.ts:139:28)
-    at FunctionInvocationScope.dryRun (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/functions/base-invocation-scope.ts:259:47)
+    at new FunctionInvocationResult (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/functions/invocation-results.ts:96:5)
+    at Function.build (/Users/dhaiwat/code/fuel-memory-overflow-repro/node_modules/@fuel-ts/program/src/functions/invocation-results.ts:111:22)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async main (/Users/dhaiwat/code/fuel-memory-overflow-repro/index.ts:19:21) {
+    at async main (/Users/dhaiwat/code/fuel-memory-overflow-repro/index.ts:26:21) {
   logs: []
 }
 ```
